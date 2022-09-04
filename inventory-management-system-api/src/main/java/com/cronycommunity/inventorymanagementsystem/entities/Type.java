@@ -14,8 +14,6 @@ public class Type {
 	@Column(name="sis_kod")
 	private String systemCode;
 
-	@Column(name="zimmet_durum")
-	private boolean zimmetDurum;
 	
 	@Column(name="envanter_adi")
 	private String envanterAdi;
@@ -29,11 +27,10 @@ public class Type {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Type(int typeId, String systemCode, boolean zimmetDurum, String envanterAdi, String genelType) {
+	public Type(int typeId, String systemCode, String envanterAdi, String genelType) {
 		super();
 		this.typeId = typeId;
 		this.systemCode = systemCode;
-		this.zimmetDurum = zimmetDurum;
 		this.envanterAdi = envanterAdi;
 		this.genelType = genelType;
 	}
@@ -53,14 +50,6 @@ public class Type {
 
 	public void setSystemCode(String systemCode) {
 		this.systemCode = systemCode;
-	}
-
-	public boolean isZimmetDurum() {
-		return zimmetDurum;
-	}
-
-	public void setZimmetDurum(boolean zimmetDurum) {
-		this.zimmetDurum = zimmetDurum;
 	}
 
 	public String getEnvanterAdi() {

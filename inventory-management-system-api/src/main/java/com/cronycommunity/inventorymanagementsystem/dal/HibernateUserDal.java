@@ -59,7 +59,15 @@ public void delete(User user) {
 	session.delete(willdeleteUser);
 	
 }
+	@Override
+	@Transactional
+	public  void deleteByKulaniciId(int kullaniciId)
+	{
+		Session session = entityManager.unwrap(Session.class);
+		User willdeleteUser = session.get(User.class, kullaniciId);
+		session.delete(willdeleteUser);
 
+	}
 
 @Override
 public User getById (int KullaniciId) {

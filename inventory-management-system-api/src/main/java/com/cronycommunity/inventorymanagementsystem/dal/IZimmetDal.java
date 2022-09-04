@@ -3,6 +3,7 @@ package com.cronycommunity.inventorymanagementsystem.dal;
 import java.util.List;
 
 
+import com.cronycommunity.inventorymanagementsystem.dtos.VZimmetDto;
 import com.cronycommunity.inventorymanagementsystem.entities.*;
 
 public interface IZimmetDal {
@@ -16,6 +17,7 @@ public interface IZimmetDal {
 	void delete (Zimmet zimmet);
 	
 	Zimmet getById (int zimmetId );
-	
+
+	List<VZimmetDto> getAllView();
 	
 }

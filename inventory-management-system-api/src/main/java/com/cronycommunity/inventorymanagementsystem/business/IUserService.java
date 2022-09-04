@@ -14,7 +14,9 @@ public interface IUserService {
 	void update(User user);
 	
 	void delete(User user);
-	
+
+	void deleteByKullaniciId(int kullaniciId);
+
 	User getById(int KullaniciId);
 
 }

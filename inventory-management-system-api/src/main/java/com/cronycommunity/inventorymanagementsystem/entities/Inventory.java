@@ -19,24 +19,32 @@ import javax.persistence.*;
 
 		@Column(name="t_id")
 		private int tipId;
-		
+
+
+		@Column(name="m_id")
+		private int mId;
+
 		@Column(name="sis_no")
 		private String sistemNo;
-		
-		@Column(name="marka")
-		private String markaName;
-		
-		@Column(name="model")
-		private String modelName;
+
 		
 		@Column(name="seri_no")
 		private String seriNo;
 		
 		@Column(name="aciklama")
 		private String aciklama;
-		
-		
-		
+
+		@Column(name="durum")
+		private String durum;
+
+		public String getDurum() {
+			return durum;
+		}
+
+		public void setDurum(String durum) {
+			this.durum = durum;
+		}
+
 		public Inventory() {
 			super();
 			// TODO Auto-generated constructor stub
@@ -44,17 +52,19 @@ import javax.persistence.*;
 
 
 
-		public Inventory(int inventoryId, LocalDateTime kayitTarihi, int tipId, String sistemNo, String markaName,
-				String modelName, String seriNo, String aciklama) {
+		public Inventory(int inventoryId, LocalDateTime kayitTarihi, int tipId,int mId, String sistemNo, String markaName,
+				String modelName, String seriNo, String aciklama, String durum) {
 			super();
 			this.inventoryId = inventoryId;
 			this.kayitTarihi = kayitTarihi;
 			this.tipId = tipId;
+			this.mId = mId;
 			this.sistemNo = sistemNo;
-			this.markaName = markaName;
-			this.modelName = modelName;
+			//this.markaName = markaName;
+			//this.modelName = modelName;
 			this.seriNo = seriNo;
 			this.aciklama = aciklama;
+			this.durum = durum;
 		}
 
 
@@ -64,6 +74,14 @@ import javax.persistence.*;
 		}
 
 
+
+		public int getmId() {
+			return mId;
+		}
+
+		public void setmId(int mId) {
+			this.mId = mId;
+		}
 
 		public void setInventoryId(int inventoryId) {
 			this.inventoryId = inventoryId;
@@ -93,6 +111,7 @@ import javax.persistence.*;
 			this.sistemNo = sistemNo;
 		}
 
+		/*
 		public String getMarkaName() {
 			return markaName;
 		}
@@ -108,6 +127,7 @@ import javax.persistence.*;
 		public void setModelName(String modelName) {
 			this.modelName = modelName;
 		}
+*/
 
 		public String getSeriNo() {
 			return seriNo;

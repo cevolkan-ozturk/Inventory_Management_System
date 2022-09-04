@@ -49,14 +49,21 @@ public  class UserManager implements IUserService {
 		this.userDal.delete(user);
 		
 	}
+
+	@Override
+	@Transactional
+	public void  deleteByKullaniciId(int kullaniciId)
+	{
+		this.userDal.deleteByKulaniciId(kullaniciId);
+	}
 	
 	@Override
 	public User getById (int kullaniciId ) {
 		return this.userDal.getById(kullaniciId);
 				
 	}
-	
-	
+
+
 	
 	
 

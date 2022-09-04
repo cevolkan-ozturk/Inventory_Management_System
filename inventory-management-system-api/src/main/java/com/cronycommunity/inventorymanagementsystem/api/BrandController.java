@@ -18,6 +18,7 @@ import com.cronycommunity.inventorymanagementsystem.business.IBrandService;
 import com.cronycommunity.inventorymanagementsystem.entities.Brand;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/brand")
 public class BrandController {
 	

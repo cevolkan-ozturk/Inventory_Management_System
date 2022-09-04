@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.cronycommunity.inventorymanagementsystem.dtos.VInventoryDto;
+import com.cronycommunity.inventorymanagementsystem.dtos.VZimmetDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,10 +58,9 @@ public  class ZimmetManager implements IZimmetService {
 		return this.zimmetDal.getById(zimmetId);
 				
 	}
-	
-	
-	
-	
-
+@Override
+	public List<VZimmetDto> getAllView(){
+		return  this.zimmetDal.getAllView();
+};
 
 }

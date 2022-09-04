@@ -5,19 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.cronycommunity.inventorymanagementsystem.business.IInventoryService;
 import com.cronycommunity.inventorymanagementsystem.business.IUserService;
+import com.cronycommunity.inventorymanagementsystem.dtos.VInventoryDto;
 import com.cronycommunity.inventorymanagementsystem.entities.Inventory;
 import com.cronycommunity.inventorymanagementsystem.entities.User;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/inventory")
 public class InventoryController {
 	
@@ -46,18 +43,18 @@ public class InventoryController {
 		this.inventoryService.add(inventory);
 		
 	}
-	
-	@PostMapping("/update")
-	public void updateInventory (@RequestBody Inventory inventory) {
-		this.inventoryService.update(inventory);
-			
-	}
-	
+
 
 	@PostMapping("/delete")
 	public void deleteInventory (@RequestBody Inventory inventory) {
 		this.inventoryService.delete(inventory);
 			
+	}
+
+	@DeleteMapping ("/{inventoryId}")
+	public void deleteInventory (@PathVariable int inventoryId) {
+		this.inventoryService.deleteByInventoryId(inventoryId);
+
 	}
 	
 
@@ -67,12 +64,11 @@ public class InventoryController {
 			
 	}
 	
-	@GetMapping("/getalltest")
-	public Object[] getAllTest() {
-		return Arrays.asList("Desktop","Keyboard","Stands").stream().toArray();
-			
+	@GetMapping("/getAllView")
+	public List<VInventoryDto> getAllView() {
+		return this.inventoryService.getAllView();
 	}
-	
+
 
 }
 

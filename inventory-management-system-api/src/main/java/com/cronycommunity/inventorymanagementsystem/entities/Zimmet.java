@@ -13,13 +13,10 @@ public class Zimmet {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int zimmetId;
 	
-	@Column(name="t_id")
-	private int typeId;
+	@Column(name="e_id")
+	private int inventoryId;
 
-	@Column(name="sis_no")
-	private String systemCode;
-	
-	@Column(name="p_id")
+	@Column(name="k_id")
 	private int kullaniciId;
 	
 	@Column(name="eposta")
@@ -41,12 +38,11 @@ public class Zimmet {
 	}
 
 
-	public Zimmet(int zimmetId, int typeId, String systemCode, int kullaniciId, String eposta, String p_id_zimmetleyen,
+	public Zimmet(int zimmetId, int typeId, int kullaniciId, String eposta, String p_id_zimmetleyen,
 			LocalDateTime verilisTarihi, String aciklama) {
 		super();
 		this.zimmetId = zimmetId;
-		this.typeId = typeId;
-		this.systemCode = systemCode;
+		this.inventoryId = inventoryId;
 		this.kullaniciId = kullaniciId;
 		this.eposta = eposta;
 		this.p_id_zimmetleyen = p_id_zimmetleyen;
@@ -63,20 +59,12 @@ public class Zimmet {
 		this.zimmetId = zimmetId;
 	}
 
-	public int getTypeId() {
-		return typeId;
+	public int getInventoryId() {
+		return inventoryId;
 	}
 
-	public void setTypeId(int typeId) {
-		this.typeId = typeId;
-	}
-
-	public String getSystemCode() {
-		return systemCode;
-	}
-
-	public void setSystemCode(String systemCode) {
-		this.systemCode = systemCode;
+	public void setInventoryId(int inventoryId) {
+		this.inventoryId = inventoryId;
 	}
 
 	public int getKullaniciId() {

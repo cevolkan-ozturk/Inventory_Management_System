@@ -7,7 +7,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
+import com.cronycommunity.inventorymanagementsystem.dtos.VInventoryDto;
+import com.cronycommunity.inventorymanagementsystem.dtos.VZimmetDto;
 import org.hibernate.Session;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -68,6 +71,18 @@ public Zimmet getById (int zimmetId) {
 	return zimmet;
 		
 }
+
+	@Override
+	public List<VZimmetDto> getAllView()
+	{
+		String sql ="SELECT * FROM envanter.vw_zimmet";
+
+		List<VZimmetDto> dtoList = entityManager.createNativeQuery(sql)
+				.unwrap(org.hibernate.Query.class).setResultTransformer(Transformers.aliasToBean(VZimmetDto.class)).list();
+
+		return  dtoList;
+	}
+
 		
 		
 	}

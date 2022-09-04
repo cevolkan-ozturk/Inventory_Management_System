@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.cronycommunity.inventorymanagementsystem.dal.IInventoryDal;
 import com.cronycommunity.inventorymanagementsystem.dal.IUserDal;
+import com.cronycommunity.inventorymanagementsystem.dtos.VInventoryDto;
 import com.cronycommunity.inventorymanagementsystem.entities.Inventory;
 import com.cronycommunity.inventorymanagementsystem.entities.User;
 
@@ -51,6 +52,12 @@ public  class InventoryManager implements IInventoryService {
 		this.inventoryDal.delete(inventory);
 		
 	}
+	@Override
+	@Transactional
+	public void deleteByInventoryId(int inventoryId)
+	{
+		this.inventoryDal.deleteByInventoryId(inventoryId);
+	}
 	
 	@Override
 	public Inventory getById (int inventoryId ) {
@@ -58,9 +65,11 @@ public  class InventoryManager implements IInventoryService {
 				
 	}
 	
+	@Override
+	public List<VInventoryDto> getAllView()
+	{
+			return this.inventoryDal.getAllView();
+	}
 	
-	
-	
-
 
 }

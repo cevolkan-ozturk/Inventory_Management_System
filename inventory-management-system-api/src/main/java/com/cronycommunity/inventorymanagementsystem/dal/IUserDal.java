@@ -14,6 +14,8 @@ public interface IUserDal {
 	void update (User user);
 	
 	void delete (User user);
+
+	void deleteByKulaniciId(int kullaniciId);
 	
 	User getById (int kullaniciId );
 	

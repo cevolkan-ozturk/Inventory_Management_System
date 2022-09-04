@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import java.util.List;
 
+import com.cronycommunity.inventorymanagementsystem.dtos.VInventoryDto;
+import com.cronycommunity.inventorymanagementsystem.dtos.VZimmetDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,7 @@ import com.cronycommunity.inventorymanagementsystem.business.IZimmetService;
 import com.cronycommunity.inventorymanagementsystem.entities.Zimmet;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/zimmet")
 public class ZimmetController {
 	
@@ -62,15 +65,12 @@ public class ZimmetController {
 	@GetMapping("/zimmet/{zimmetId}")
 	public Zimmet getById(@PathVariable int zimmetId) {
 		return this.zimmetService.getById(zimmetId);
-			
 	}
-	
-	@GetMapping("/getalltest")
-	public Object[] getAllTest() {
-		return Arrays.asList("Desktop","Keyboard","Stands").stream().toArray();
-			
+
+	@GetMapping("/getAllView")
+	public List<VZimmetDto> getAllView() {
+		return this.zimmetService.getAllView();
 	}
-	
 
 }
 
