@@ -24,7 +24,7 @@ import com.cronycommunity.inventorymanagementsystem.entities.Zimmet;
 @RequestMapping("/zimmet")
 public class ZimmetController {
 	
-	private IZimmetService zimmetService;
+	private final IZimmetService zimmetService;
 	
 	@Autowired 
 	public ZimmetController(IZimmetService zimmetService) {
@@ -51,14 +51,12 @@ public class ZimmetController {
 	@PostMapping("/update")
 	public void updateZimmet (@RequestBody Zimmet zimmet) {
 		this.zimmetService.update(zimmet);
-			
 	}
 	
 
 	@PostMapping("/delete")
 	public void deleteZimmet (@RequestBody Zimmet zimmet) {
 		this.zimmetService.delete(zimmet);
-			
 	}
 	
 
