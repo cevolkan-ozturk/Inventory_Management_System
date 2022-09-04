@@ -74,7 +74,7 @@
     </div>
 
     <!-- SidebarSearch Form -->
-    <div class="form-inline">
+    <div class="form-inline" >
       <div class="input-group" data-widget="sidebar-search">
         <input class="form-control form-control-sidebar" type="search" placeholder="Ara" aria-label="Search">
         <div class="input-group-append">
@@ -171,6 +171,15 @@
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline" style="
+        padding-top: 10%">
+          <div class="input-group">
+                <button type="button" onclick="Logout()" class="btn btn-block btn-danger btn-sm"> Çıkış Yap
+              </button>
+          </div>
+        </div>
   </div>
   <!-- /.sidebar -->
 </aside>
@@ -298,6 +307,10 @@
 
 
 <script>
+
+function Logout(){
+  window.location.replace("http://127.0.0.1:5500/pages/InventryManagementSystem/login.html");
+}
 
 
   $(function () {

@@ -175,6 +175,14 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+    <!-- SidebarSearch Form -->
+    <div class="form-inline" style="
+    padding-top: 10%">
+      <div class="input-group">
+            <button type="button" onclick="Logout()" class="btn btn-block btn-danger btn-sm"> Çıkış Yap
+          </button>
+      </div>
+    </div>
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -285,6 +293,10 @@
   <script src="../../dist/js/demo.js"></script>
   <!-- Page specific script -->
   <script>
+
+     function Logout(){
+    window.location.replace("http://127.0.0.1:5500/pages/InventryManagementSystem/login.html");
+    }
 
     function uuidv4() {
       return ([1e7] + 1e3 + 4e3).replace(/[018]/g, c =>

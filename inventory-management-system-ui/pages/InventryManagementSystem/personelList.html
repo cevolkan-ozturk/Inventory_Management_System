@@ -162,8 +162,17 @@
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
+     <!-- SidebarSearch Form -->
+     <div class="form-inline" style="
+     padding-top: 10%">
+       <div class="input-group">
+             <button type="button" onclick="Logout()" class="btn btn-block btn-danger btn-sm"> Çıkış Yap
+           </button>
+       </div>
+     </div>
   </div>
   <!-- /.sidebar -->
+  
 </aside>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -291,6 +300,12 @@
 <!-- Page specific script -->
 <script>
   var selectedRow=0;
+
+
+  function Logout(){
+  window.location.replace("http://127.0.0.1:5500/pages/InventryManagementSystem/login.html");
+}
+
 
   function cancelOperation()
   {

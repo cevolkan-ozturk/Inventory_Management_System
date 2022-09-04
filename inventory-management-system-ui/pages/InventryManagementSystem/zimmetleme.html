@@ -175,6 +175,14 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+      <!-- SidebarSearch Form -->
+      <div class="form-inline" style="
+      padding-top: 10%">
+        <div class="input-group">
+              <button type="button" onclick="Logout()" class="btn btn-block btn-danger btn-sm"> Çıkış Yap
+            </button>
+        </div>
+      </div>
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -272,6 +280,9 @@
   <!-- Page specific script -->
   <script src="../../plugins/toastr/toastr.min.js"></script>
   <script>
+    function Logout(){
+    window.location.replace("http://127.0.0.1:5500/pages/InventryManagementSystem/login.html");
+    }
 
     function saveZimmetKayit() {
       var requestData = {};

@@ -55,7 +55,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" onclick="loginSubmit()"  class="btn btn-primary btn-block">Giriş Yap</button>
+            <button onclick="loginSubmit()"  class="btn btn-primary btn-block">Giriş Yap</button>
           </div>
           <!-- /.col -->
         </div>
@@ -115,7 +115,7 @@
         console.log(response);
         if(response=="index")
         { 
-          window.location.replace("http://127.0.0.1:5500/pages/InventryManagementSystem/envanterList.html");
+          window.location.replace("http://127.0.0.1:5500/Anasayfa.html");
         }
         else {
           toastr.warning('Giriş işlemi başarısız lütfen tekrar deneyiniz.');
